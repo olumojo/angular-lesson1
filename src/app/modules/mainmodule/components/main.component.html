@@ -1,0 +1,22 @@
+<div>
+    <div id="SearchWrapper" *ngIf="FilteredStudents">
+        <label for="filterBy">Search</label>
+        <input id="filterBy" type="text" name="filterBy" [(ngModel)]="Filter"/>
+    </div> 
+    
+    <table *ngIf="FilteredStudents">
+        <thead>
+           <tr>
+            <td>Id</td><td>First Name</td><td>Last Name</td><td>Gender</td>
+           </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let std of FilteredStudents">
+                <td>{{std.id}}</td>
+                <td>{{std.first_name}}</td>
+                <td>{{std.last_name}}</td>
+                <td>{{std.gender}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
